@@ -13,6 +13,8 @@ dependencies = [
     "pyyaml>=6.0.3",
     "structlog>=26.1.0",
     "supervision>=0.31.7",
+    "torch>=2.15.0",
+    "torchvision>=0.29.2",
     "trackers>=2.7.0",
     "typer>=0.29.2",
     "ultralytics>=8.4.215",
@@ -44,3 +46,12 @@ select = ["E", "F", "I", "B", "UP", "SIM"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "--cov=traffic_agent --cov-report=term-missing"
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+torchvision = [{ index = "pytorch-cpu", marker = "sys_platform == 'linux'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
