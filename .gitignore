@@ -7,3 +7,4 @@ runs/
 .env
 __pycache__/
 .coverage
+.DS_Store
