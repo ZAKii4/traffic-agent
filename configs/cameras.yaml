@@ -1,0 +1,16 @@
+cameras:
+  - id: demo-autoroute
+    description: Video de demonstration supervision (autoroute, deux chaussees)
+    stride: 1
+    classes: [1, 2, 3, 5, 7]
+    lines:
+      - id: vers_camera
+        x1: 0.02
+        y1: 0.75
+        x2: 0.47
+        y2: 0.75
+      - id: s_eloigne
+        x1: 0.48
+        y1: 0.45
+        x2: 0.90
+        y2: 0.45
