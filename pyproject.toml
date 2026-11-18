@@ -1,0 +1,47 @@
+[project]
+name = "traffic-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Zakaria Khamlich", email = "zakariakhamlich22@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.5.5",
+    "pydantic-settings>=2.16.3",
+    "pyyaml>=6.0.3",
+    "structlog>=26.1.0",
+    "supervision>=0.31.7",
+    "trackers>=2.7.0",
+    "typer>=0.29.2",
+    "ultralytics>=8.4.215",
+]
+
+[project.scripts]
+traffic-agent = "traffic_agent:main"
+
+[build-system]
+requires = ["uv_build>=0.10.7,<0.11.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pre-commit>=4.7.0",
+    "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.17.5",
+]
+
+[tool.ruff]
+extend-exclude = ["prototypes"]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=traffic_agent --cov-report=term-missing"

@@ -1,0 +1,9 @@
+.venv/
+data/
+runs/
+*.pt
+*.onnx
+*.mp4
+.env
+__pycache__/
+.coverage
